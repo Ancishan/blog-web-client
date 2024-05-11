@@ -5,7 +5,7 @@ import useAuth from '../hooks/useAuth'
 const Navbar = () => {
   const { user, logOut } = useAuth()
   return (
-    <div className='navbar bg-base-100 shadow-sm container  -mt-6 py-6 mx-auto fixed top-0 left-0 right-0'>
+    <div className='navbar bg-base-100 shadow-sm container  -mt-6 py-6 mx-auto fixed top-0 left-0 right-0 z-50'>
   <div className='flex-1 pt-6'>
     <div className='flex gap-2 items-center'>
       <img className='w-auto h-7 pt-16 rounded-full' src={logo} alt='' />
