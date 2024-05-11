@@ -38,7 +38,7 @@ const Navbar = () => {
           className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
         >
           <li>
-            <Link to='/add-job' className='justify-between'>Add blog</Link>
+            <Link to='/add-blog' className='justify-between'>Add blog</Link>
           </li>
           <li>
             <Link to='/my-posted-jobs'>All blogs</Link>

@@ -3,6 +3,7 @@ import Main from '../Layouts/Main'
 import Home from '../pages/Home';
 import Registration from '../pages/authentication/Registration';
 import Login from '../pages/authentication/Login';
+import AddBlogs from '../pages/AddBlogs';
 
 
 // import ErrorPage from '../Pages/ErrorPage';
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
           {
             path:'/login',
             element:<Login></Login>,
+          },
+          {
+            path:'/add-blog',
+            element:<AddBlogs></AddBlogs>
           },
          
         ]
