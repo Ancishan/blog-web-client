@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import {useState } from "react";
-
+import log from '../../assets/log.png'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -50,11 +50,15 @@ const Registration = () => {
     };
 
     return (
-        <div>
+        <div className="mt-20">
             <ToastContainer />
-            <div className="pt-36 md:pt-20">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div>
+                <img src={log} alt="" />
+            </div>
+          <div >
                 <div className=" w-full md:w-[550px] mx-auto mb-6 rounded-lg text-orange-600">
-                    <h2 className="text-3xl font-bold text-center pt-4 ">Register your account</h2>
+                    <h2 className="text-3xl font-bold text-center pt-10 ">Register your account</h2>
                     <form onSubmit={handleRegister} className="card-body">
 
                         <div className="form-control">
@@ -121,6 +125,7 @@ const Registration = () => {
                     </form>
                 </div>
             </div>
+          </div>
         </div>
     );
 };

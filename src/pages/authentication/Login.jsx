@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../hooks/useAuth";
-
+import regis from '../../assets/regis.png'
 const Login = () => {
   const { signIn, signInWithGoogle, SignInWithGithub } = useAuth()
   const location = useLocation();
@@ -53,10 +53,15 @@ const Login = () => {
 
   return (
 
-    <div>
+    <div className="mt-20" >
       <ToastContainer />
-      <div className="w-[350px] lg:w-[550px] pt-36 md:pt-20 mx-auto mt-4 pb-6 rounded-lg">
-        <h2 className="text-3xl font-bold text-center text-orange-600">Login your account</h2>
+  
+      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div>
+        <img src={regis} alt="" />
+      </div>
+      <div className="w-[350px] lg:w-[550px] pt-10 md:pt-0 mx-auto pb-6 rounded-lg">
+        <h2 className="text-3xl pt-10 font-bold text-center text-orange-600">Login your account</h2>
         <form onSubmit={handleLogin} className="card-body ">
           <div className="form-control">
             <label className="label">
@@ -85,7 +90,7 @@ const Login = () => {
           <div className="form-control mt-1">
             <button className="btn bg-orange-200 full-width text-orange-600 text-xl">Login</button>
           </div>
-          <p className="text-orange-600">Dont’t Have An Account ? <Link to="/register" className="text-orange-600 font-bold">Registration </Link> </p>
+          <p className="text-orange-600">Dont’t Have An Account ? <Link to="/registration" className="text-orange-600 font-bold">Registration </Link> </p>
         </form>
         <div className="text-center">
           <p className="text-orange-600 mx-auto text-lg ">------ Or sign in with ------</p>
@@ -105,6 +110,7 @@ const Login = () => {
           </div>
 
         </div>
+      </div>
       </div>
 
     </div>

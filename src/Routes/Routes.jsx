@@ -17,14 +17,14 @@ const router = createBrowserRouter([
             element:<Home></Home>,
             // loader: () => fetch(`${import.meta.env.VITE_APP_URL}/jobs`)
           },
-          // {
-          //   path:'/registration',
-          //   element:<Registration></Registration>,
-          // },
-          // {
-          //   path:'/login',
-          //   element:<Login></Login>,
-          // },
+          {
+            path:'/registration',
+            element:<Registration></Registration>,
+          },
+          {
+            path:'/login',
+            element:<Login></Login>,
+          },
          
         ]
     },
