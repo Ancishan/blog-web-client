@@ -5,6 +5,7 @@ import Registration from '../pages/authentication/Registration';
 import Login from '../pages/authentication/Login';
 import AddBlogs from '../pages/AddBlogs';
 import Wishlist from '../pages/Wishlist';
+import ViewBlog from '../pages/ViewBlog';
 
 
 // import ErrorPage from '../Pages/ErrorPage';
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
           {
             path:'/wishlist',
             element:<Wishlist></Wishlist>
+          },
+          {
+            path:'/view/:id',
+            element:<ViewBlog></ViewBlog>
           },
          
         ]

@@ -37,7 +37,9 @@ const BlogCard = ({ blog }) => {
         <p>{short_description}</p>
         <div className="card-actions ">
           <p>{new Date(date).toLocaleDateString()}</p>
-          <div className="badge badge-outline">Details</div>
+          <Link to={`/view/${_id}`} className="btn btn-outline btn-warning ">
+                View Details
+            </Link>
           <button type="button" onClick={wishList} className="badge badge-outline">Wishlist</button>
         
         </div>
