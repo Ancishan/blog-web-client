@@ -44,7 +44,7 @@ const Navbar = () => {
             <Link to='/my-posted-jobs'>All blogs</Link>
           </li>
           <li>
-            <Link to='/my-bids'>Wishlist</Link>
+            <Link to='/wishlist'>Wishlist</Link>
           </li>
           <li>
             <Link to='/bid-request'>Featured Blogs

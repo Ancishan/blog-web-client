@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Registration from '../pages/authentication/Registration';
 import Login from '../pages/authentication/Login';
 import AddBlogs from '../pages/AddBlogs';
+import Wishlist from '../pages/Wishlist';
 
 
 // import ErrorPage from '../Pages/ErrorPage';
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
           {
             path:'/add-blog',
             element:<AddBlogs></AddBlogs>
+          },
+          {
+            path:'/wishlist',
+            element:<Wishlist></Wishlist>
           },
          
         ]
