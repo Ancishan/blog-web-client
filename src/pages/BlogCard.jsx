@@ -27,20 +27,20 @@ const BlogCard = ({ blog }) => {
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure><img className="h-96 w-full object-cover" src={photo} alt="blog image" /></figure>
       <div className="card-body">
-        <div className="flex justify-between">
-          <h1 className='mt-2 text-lg font-semibold text-gray-800 '>
-            {blog_title}
-          </h1>
-          <div className="badge badge-secondary">{category}</div>
-        </div>
+      <div className="flex gap-6 items-center">
+           <h1 className=' text-lg font-semibold text-gray-800 '>
+              {blog_title}
+            </h1>
+            <p>{new Date(date).toLocaleDateString()}</p>
+           </div>
 
         <p>{short_description}</p>
         <div className="card-actions ">
-          <p>{new Date(date).toLocaleDateString()}</p>
+         
           <Link to={`/view/${_id}`} className="btn btn-outline btn-warning ">
                 View Details
             </Link>
-          <button type="button" onClick={wishList} className="btn btn-outline btn-warning ">Wishlist</button>
+          <Link to='/wishlist'><button type="button" onClick={wishList} className="btn btn-outline btn-warning ">Wishlist</button></Link>
         
         </div>
       </div>

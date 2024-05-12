@@ -41,7 +41,7 @@ const Registration = () => {
             updateUserProfile(name,photo) .then(() =>{
                 (form)
             })
-            navigate('/')
+            navigate(location?.state || '/');
             toast.success('Registration successful');
         } catch (error) {
             console.error("Error registering user:", error);

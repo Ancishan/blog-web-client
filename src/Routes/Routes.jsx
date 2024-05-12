@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         // errorElement:<ErrorPage></ErrorPage>,
         children: [
           {
-            index: true,
+            index: '/',
             element:<Home></Home>,
             // loader: () => fetch(`${import.meta.env.VITE_APP_URL}/jobs`)
           },
