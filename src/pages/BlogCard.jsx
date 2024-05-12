@@ -40,7 +40,7 @@ const BlogCard = ({ blog }) => {
           <Link to={`/view/${_id}`} className="btn btn-outline btn-warning ">
                 View Details
             </Link>
-          <button type="button" onClick={wishList} className="badge badge-outline">Wishlist</button>
+          <button type="button" onClick={wishList} className="btn btn-outline btn-warning ">Wishlist</button>
         
         </div>
       </div>

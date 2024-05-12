@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer";
 
 
 
@@ -8,7 +9,7 @@ const Main = () => {
         <div>
           <Navbar></Navbar>
           <div className="min-h-[calc(100vh - 306px)]"> <Outlet></Outlet></div>
-           {/* <Footer></Footer> */}
+          <Footer></Footer>
         </div>
     );
 };
