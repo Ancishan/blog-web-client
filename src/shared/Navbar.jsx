@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link to='/add-blog' className='justify-between'>Add blog</Link>
           </li>
           <li>
-            <Link to='/my-posted-jobs'>All blogs</Link>
+            <Link to='/all-blogs'>All blogs</Link>
           </li>
           <li>
             <Link to='/wishlist'>Wishlist</Link>

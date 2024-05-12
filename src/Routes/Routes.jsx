@@ -6,6 +6,7 @@ import Login from '../pages/authentication/Login';
 import AddBlogs from '../pages/AddBlogs';
 import Wishlist from '../pages/Wishlist';
 import ViewBlog from '../pages/ViewBlog';
+import AllBlog from '../pages/AllBlog';
 
 
 // import ErrorPage from '../Pages/ErrorPage';
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
           {
             path:'/view/:id',
             element:<ViewBlog></ViewBlog>
+          },
+          {
+            path:'/all-blogs',
+            element:<AllBlog></AllBlog>,
+            loader:() =>fetch(`${import.meta.env.VITE_APP_URL}/blogs`)
+
           },
          
         ]
