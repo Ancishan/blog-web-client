@@ -36,7 +36,7 @@ const AddBlogs = () => {
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/blog`, BlogData)
             console.log(data)
-            toast.success('job data Updated successfully')
+            toast.success('blog data Updated successfully')
             // navigate('/my-posted-jobs')
         } catch (err) {
             console.log(err)

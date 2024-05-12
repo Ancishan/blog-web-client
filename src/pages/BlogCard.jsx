@@ -8,12 +8,12 @@ import useAuth from "../hooks/useAuth"
 const BlogCard = ({ blog }) => {
   // const navigate = useNavigate()
   const { user } = useAuth()
-  console.log(user.uid)
-  const { _id, blog_title, photo, category, short_description, date } = blog || {}
+  console.log(user?.email)
+  const { _id, blog_title, photo, category, short_description,description, date } = blog || {}
 
   // creating wish
   const wishList = async () => {
-    const wishData = { blog_id: _id, user_id: user?.uid };
+    const wishData = { blog_id: _id, user_id: user?.email };
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/wish-create`, wishData);
       console.log(data);
@@ -39,9 +39,7 @@ const BlogCard = ({ blog }) => {
           <p>{new Date(date).toLocaleDateString()}</p>
           <div className="badge badge-outline">Details</div>
           <button type="button" onClick={wishList} className="badge badge-outline">Wishlist</button>
-          {/* <Link to={`/blog/${_id}`} className='w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'> 
-        </Link> */}
-          {/* */}
+        
         </div>
       </div>
     </div>
