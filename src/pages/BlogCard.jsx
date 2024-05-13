@@ -8,7 +8,7 @@ import useAuth from "../hooks/useAuth"
 const BlogCard = ({ blog }) => {
   const navigate = useNavigate()
   const { user } = useAuth()
-  console.log(user?.email)
+ 
   const { _id, blog_title, photo, category, short_description,description, date } = blog || {}
 
   const wishList = async () => {

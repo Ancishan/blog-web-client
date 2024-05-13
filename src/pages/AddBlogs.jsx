@@ -5,11 +5,12 @@ import useAuth from "../../src/hooks/useAuth";
 
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 const AddBlogs = () => {
     const [startDate, setStartDate] = useState(new Date());
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const { user } = useAuth()
 
     const handleFormSubmission = async e => {
@@ -37,7 +38,7 @@ const AddBlogs = () => {
             const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/blog`, BlogData)
             console.log(data)
             toast.success('blog data Updated successfully')
-            // navigate('/my-posted-jobs')
+            navigate('/')
         } catch (err) {
             console.log(err)
         }
