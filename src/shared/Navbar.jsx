@@ -58,7 +58,7 @@ const Navbar = () => {
                 <Link to='/wishlist'>Wishlist</Link>
               </li>
               <li>
-                <Link to='/bid-request'>Featured Blogs</Link>
+                <Link to='/featured'>Featured Blogs</Link>
               </li>
               <li className='mt-2'>
                 <button onClick={handleLogout} className='bg-gray-200 block text-center'>

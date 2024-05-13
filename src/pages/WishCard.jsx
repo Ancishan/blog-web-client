@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-const WishCard = ({ wish }) => {
+import toast from 'react-hot-toast';
+import { Button } from "flowbite-react";
+const WishCard = ({ wish, onDelete }) => {
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
@@ -19,6 +20,16 @@ const WishCard = ({ wish }) => {
         }
     }, [wish]);
 
+    const handleDelete = async () => {
+        try {
+            await axios.delete(`${import.meta.env.VITE_APP_URL}/wishes/${wish._id}`);
+            onDelete(wish._id); // Update local state in parent component to remove the deleted wish
+            toast.success("Removed from Wishlist successfully");
+        } catch (error) {
+            console.error('Error deleting wish:', error);
+        }
+    };
+
     return (
         <div>  
           {blog && (
@@ -35,6 +46,7 @@ const WishCard = ({ wish }) => {
                 <p>{blog?.description}</p>
                 <div className="card-actions">
                   <p>{blog?.date && new Date(blog.date).toLocaleDateString()}</p>
+                  <button type="button" onClick={handleDelete} className="text-red-600">Delete</button>
                 </div>
               </div>
             </div>

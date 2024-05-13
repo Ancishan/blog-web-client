@@ -8,6 +8,7 @@ import Wishlist from '../pages/Wishlist';
 import ViewBlog from '../pages/ViewBlog';
 import AllBlog from '../pages/AllBlog';
 import PrivateRoute from './PrivateRoute';
+import Featured from '../pages/Featured';
 
 
 // import ErrorPage from '../Pages/ErrorPage';
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
             element:<AllBlog></AllBlog>,
             // loader:() =>fetch(`${import.meta.env.VITE_APP_URL}/blogs`)
 
+          },
+          {
+            path:'/featured',
+            element :<Featured></Featured>,
           },
          
         ]
