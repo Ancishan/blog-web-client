@@ -32,18 +32,27 @@ const Login = () => {
       toast.error(err?.message);
     }
   };
-  
-  const handleGoogleSignIn = () => {
-    signInWithGoogle()
-      .then(() => {
-        toast.success(" logged in successfully");
-        navigate(location?.state || '/');
-      })
-      .catch(error => {
-        console.log(error)
-      })
+  const from = location.state || '/'
+  const handleGoogleSignIn = async () => {
+    try {
+      // 1.google sign in from firebase
+     const result= await signInWithGoogle() 
+     console.log(result.user)
+      //2. get token from server using email
+     const {data} = await axios.post(`${import.meta.env.VITE_APP_URL}/jwt`,
+     {
+      email: result?. user?.email
+     }, 
+     {withCredentials: true }
+    )
+     console.log(data)
+      toast.success('signin successfully')
+      navigate(from, { replace: true })
+    } catch (err) {
+      console.log(err)
+      toast.error(err?.message)
+    }
   }
-
   const handleGithubsignIn = () => {
     SignInWithGithub()
       .then(result => {
