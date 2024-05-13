@@ -7,6 +7,7 @@ import AddBlogs from '../pages/AddBlogs';
 import Wishlist from '../pages/Wishlist';
 import ViewBlog from '../pages/ViewBlog';
 import AllBlog from '../pages/AllBlog';
+import PrivateRoute from './PrivateRoute';
 
 
 // import ErrorPage from '../Pages/ErrorPage';
@@ -31,15 +32,15 @@ const router = createBrowserRouter([
           },
           {
             path:'/add-blog',
-            element:<AddBlogs></AddBlogs>
+            element:<PrivateRoute><AddBlogs></AddBlogs></PrivateRoute>
           },
           {
             path:'/wishlist',
-            element:<Wishlist></Wishlist>
+            element:<PrivateRoute><Wishlist></Wishlist></PrivateRoute>
           },
           {
             path:'/view/:id',
-            element:<ViewBlog></ViewBlog>
+            element:<PrivateRoute><ViewBlog></ViewBlog></PrivateRoute>
           },
           {
             path:'/all-blogs',

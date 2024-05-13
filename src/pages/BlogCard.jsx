@@ -6,22 +6,30 @@ import { Link, useNavigate } from "react-router-dom"
 import useAuth from "../hooks/useAuth"
 
 const BlogCard = ({ blog }) => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const { user } = useAuth()
   console.log(user?.email)
   const { _id, blog_title, photo, category, short_description,description, date } = blog || {}
 
-  // creating wish
   const wishList = async () => {
     const wishData = { blog_id: _id, user_id: user?.email };
     try {
-      const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/wish-create`, wishData);
-      console.log(data);
+      // Check if the blog is already in the wishlist
+      const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/wish-find/${user?.email}`);
+      const alreadyExists = data.some(wish => wish.blog_id === _id);
+      if (alreadyExists) {
+        toast.error("This blog is already in your wishlist");
+      } else {
+        // If not, add it to the wishlist
+        const response = await axios.post(`${import.meta.env.VITE_APP_URL}/wish-create`, wishData);
+        console.log(response.data);
+        toast.success("Added to Wishlist successfully");
+        navigate('/wishlist')
+      }
     } catch (error) {
       console.error('Error creating wish:', error);
     }
   };
-
   return (
 
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -40,7 +48,7 @@ const BlogCard = ({ blog }) => {
           <Link to={`/view/${_id}`} className="btn btn-outline btn-warning ">
                 View Details
             </Link>
-          <Link to='/wishlist'><button type="button" onClick={wishList} className="btn btn-outline btn-warning ">Wishlist</button></Link>
+          <button type="button" onClick={wishList} className="btn btn-outline btn-warning ">Wishlist</button>
         
         </div>
       </div>

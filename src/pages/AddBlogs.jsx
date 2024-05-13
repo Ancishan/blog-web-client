@@ -46,8 +46,8 @@ const AddBlogs = () => {
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-28'>
             <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
-                <h2 className='text-lg font-bold text-gray-700 capitalize text-center py-6 '>
-                    Add Your Blog
+                <h2 className='text-3xl font-bold text-gray-700 capitalize text-center py-6 '>
+                    Create Your Blog
                 </h2>
 
                 <form onSubmit={handleFormSubmission}>
