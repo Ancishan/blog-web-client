@@ -55,6 +55,7 @@ const handleSearch = e =>{
 console.log(search)
   return (
     <div className='container px-6 py-10 pt-32 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between'>
+      <h2 className="text-3xl font-bold pt-10 pb-16 text-center">This Whole Blog Is For You</h2>
       <div>
         <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
           <div>

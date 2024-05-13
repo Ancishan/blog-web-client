@@ -8,27 +8,31 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../hooks/useAuth";
 import regis from '../../assets/regis.png'
+import axios from "axios";
 const Login = () => {
   const { signIn, signInWithGoogle, SignInWithGithub } = useAuth()
   const location = useLocation();
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
 
-  const handleLogin = e => {
+  const handleLogin = async e => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const email = form.get('email');
-    const password = form.get('password');
-
-    signIn(email, password)
-      .then(() => {
-        toast.success(" logged in successfully");
-        navigate(location?.state || '/');
-      })
-      .catch(error => {
-        console.error("Error logging in:", error);
-      });
-  }
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ email, password });
+    try {
+      const result = await signIn(email, password); // Implement signIn function
+      const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/jwt`, { email: result?. user?.email}, { withCredentials: true });
+      console.log(data);
+      navigate(location?.state || '/');
+      toast.success('Signed in successfully');
+    } catch (err) {
+      console.error(err);
+      toast.error(err?.message);
+    }
+  };
+  
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then(() => {
