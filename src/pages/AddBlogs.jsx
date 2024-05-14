@@ -14,35 +14,41 @@ const AddBlogs = () => {
     const { user } = useAuth()
 
     const handleFormSubmission = async e => {
-        e.preventDefault()
-        const form = e.target
-        const blog_title = form.blog_title.value
-        const photo = form.photoURL.value
-        const description = form.description.value
-        const short_description = form.short_description.value
-        const category = form.category.value
-        const date = startDate
-        const email = form.email.value
- 
-
+        e.preventDefault();
+        const form = e.target;
+        const blog_title = form.blog_title.value;
+        const photo = form.photoURL.value;
+        const description = form.description.value;
+        const short_description = form.short_description.value;
+        const category = form.category.value;
+        const date = startDate;
+        const email = form.email.value;
+        
+        // Get user's photo URL
+        const userPhotoURL =  user.photoURL;
+        const displayName =  user.displayName ;
+    console.log(userPhotoURL)
         const BlogData = {
             date,
             email,
             photo,
+            displayName,
+            userPhotoURL, // Add user's photo URL to blog data
             description,
             category,
             short_description,
             blog_title,
-        }
+        };
+    
         try {
-            const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/blog`, BlogData)
-            console.log(data)
-            toast.success('blog data Updated successfully')
-            navigate('/')
+            const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/blog`, BlogData);
+            console.log(data);
+            toast.success('Blog data updated successfully');
+            navigate('/');
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
-    }
+    };
 
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-28'>
