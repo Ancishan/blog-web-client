@@ -27,7 +27,7 @@ const AddBlogs = () => {
         // Get user's photo URL
         const userPhotoURL =  user.photoURL;
         const displayName =  user.displayName ;
-    console.log(userPhotoURL)
+    (userPhotoURL)
         const BlogData = {
             date,
             email,
@@ -47,11 +47,11 @@ const AddBlogs = () => {
     
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_APP_URL}/blog`, BlogData);
-            console.log(data);
+            // console.log(data);
             toast.success('Blog data updated successfully');
             navigate('/');
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 

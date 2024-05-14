@@ -31,13 +31,13 @@ const AllBlog = () => {
         getCount()
     }, [filter])
 
-console.log(count)
+// console.log(count)
 const numberOfPages = Math.ceil(count / itemPerPage)
   const pages = [...Array(numberOfPages).keys()].map(element => element + 1)
 
 // handle pagination
 const handlePaginationButton=(value) =>{
-    console.log(value)
+    // console.log(value)
     setCurrentPage(value)
 
 }
@@ -52,7 +52,7 @@ const handleSearch = e =>{
     // const text = e.target.search.value
     setSearch(searchText);
 }
-console.log(search)
+// console.log(search)
   return (
     <div className='container pl-16 pt-32 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between'>
       <h2 className="text-3xl font-bold pt-10 pb-16 text-center">This Whole Blog Is For You</h2>

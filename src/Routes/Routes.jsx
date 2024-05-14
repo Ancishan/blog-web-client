@@ -45,7 +45,7 @@ const router = createBrowserRouter([
           },
           {
             path:'/all-blogs',
-            element:<AllBlog></AllBlog>,
+            element:<PrivateRoute><AllBlog></AllBlog>,</PrivateRoute>
             // loader:() =>fetch(`${import.meta.env.VITE_APP_URL}/blogs`)
 
           },

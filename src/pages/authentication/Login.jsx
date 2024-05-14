@@ -20,7 +20,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ email, password });
+    // console.log({ email, password });
     try {
       const result = await signIn(email, password);
       await axios.post(`${import.meta.env.VITE_APP_URL}/jwt`, { email: result?. user?.email}, { withCredentials: true });
@@ -46,8 +46,8 @@ const Login = () => {
 
   const handleGithubsignIn = () => {
     SignInWithGithub()
-      .then(result => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
       })
       .catch(error => {
         console.log(error);
