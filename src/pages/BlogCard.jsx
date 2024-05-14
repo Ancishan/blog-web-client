@@ -43,6 +43,7 @@ const BlogCard = ({ blog }) => {
            </div>
 
         <p>{short_description}</p>
+    
         <div className="card-actions ">
          
           <Link to={`/view/${_id}`} className="btn btn-outline btn-warning ">

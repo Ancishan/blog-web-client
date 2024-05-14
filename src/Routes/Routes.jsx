@@ -51,7 +51,7 @@ const router = createBrowserRouter([
           },
           {
             path:'/featured',
-            element :<Featured></Featured>,
+            element :<PrivateRoute><Featured></Featured></PrivateRoute>,
           },
          
         ]

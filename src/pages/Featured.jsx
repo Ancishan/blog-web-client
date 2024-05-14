@@ -42,12 +42,13 @@ const Featured = () => {
                         <tr key={blog._id}>
                             <td className="border px-4 py-2">{blog.blog_title}</td>
                             <td className="border px-4 py-2">{blog.description}</td>
-                            <td className="border px-4 py-2">{blog.author && blog.author.displayName}</td>
+                            <td className="border px-4 py-2">{blog.bloger && blog.bloger.name}</td>
                             <td className="border px-4 py-2">
-                                {blog.author && <img src={blog.author.photoURL} alt="Author" />}
+                                {blog.bloger && <img className='w-16 h-16 ' src={blog.bloger.photos} alt="Author" />}
                             </td>
                         </tr>
                     ))}
+
 
                 </tbody>
             </table>

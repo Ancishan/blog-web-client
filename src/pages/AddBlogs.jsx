@@ -38,6 +38,11 @@ const AddBlogs = () => {
             category,
             short_description,
             blog_title,
+            bloger: {
+                email,
+                name: user?.displayName,
+                photos: user?.photoURL,
+            }
         };
     
         try {
