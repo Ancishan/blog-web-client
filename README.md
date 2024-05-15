@@ -3,7 +3,8 @@ Fronted:
 
  1.react-router-dom: [npm install react-router-dom](https://reactrouter.com/en/main)
  2.firebase : [npm install firebase](https://firebase.google.com/)
- 3.Tailwind CSS: npm install tailwindcss https://tailwindcss.com/ow vite react ; https://flowbite-react.com/docs/components/banner#newsletter-sign-up-banner
+ 3.Tailwind CSS: npm install tailwindcss https://tailwindcss.com/ow vite react ;
+ 4. Flow vite https://flowbite-react.com/docs/components/banner#newsletter-sign-up-banner
  5.React Icons:[ npm install react-icons](https://react-icons.github.io/react-icons/)
  6.react-intersection-observer : react-intersection-observer 
  7.React lottie animation: npm install --save lottie-react 
