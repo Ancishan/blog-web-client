@@ -17,8 +17,8 @@ const TabCategory = () => {
         <Tabs>
           
             <div className='container px-6 py-10 mx-auto'>
-            <h2 className='text-center'>Browse blog by Category</h2>
-                <div className='flex items-center justify-center pt-6'>
+            <h2 className='text-center text-3xl font-extrabold text-blue-500 '>Browse blog by Category</h2>
+                <div className='flex items-center text-xl font-semibold md:text-2xl md:font-bold text-blue-500 justify-center pt-6'>
                     <TabList>
                         <Tab>Tourist Place</Tab>
                         <Tab>Food Blog</Tab>
@@ -27,7 +27,7 @@ const TabCategory = () => {
                 </div>
 
                 <TabPanel>
-                  <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                  <div className='grid grid-cols-1 md:grid-cols-3 gap-8 w-full pl-10 pt-10'>
                   {blogs
                 .filter(j => j.category === 'Tourist Place')
                   .map(blog =>(

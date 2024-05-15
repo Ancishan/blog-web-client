@@ -57,31 +57,31 @@ const Registration = () => {
                 <img src={log} alt="" />
             </div>
           <div >
-                <div className=" w-full md:w-[550px] mx-auto mb-6 rounded-lg text-orange-600">
+                <div className=" w-full md:w-[550px] mx-auto mb-6 rounded-lg text-blue-500">
                     <h2 className="text-3xl font-bold text-center pt-10 ">Register your account</h2>
                     <form onSubmit={handleRegister} className="card-body">
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-orange-600 ">Name</span>
+                                <span className="label-text text-blue-500 ">Name</span>
                             </label>
                             <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-orange-600">Photo Url</span>
+                                <span className="label-text text-blue-500">Photo Url</span>
                             </label>
                             <input type="text" placeholder="photo URL" name="photoURL" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-orange-600">Email</span>
+                                <span className="label-text text-blue-500">Email</span>
                             </label>
                             <input type="email" placeholder="email" name="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-orange-600">Password</span>
+                                <span className="label-text text-blue-500">Password</span>
                             </label>
                             <div className="relative w-full">
                                 <input
@@ -99,7 +99,7 @@ const Registration = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-orange-600">Confirm Password</span>
+                                <span className="label-text text-blue-500">Confirm Password</span>
                             </label>
                             <div className="relative w-full">
                                 <input
@@ -117,7 +117,7 @@ const Registration = () => {
 
                         </div>
                         <div className="form-control mt-3">
-                            <button type="submit" className="btn bg-orange-200 text-orange-600 text-xl w-full">Registration</button>
+                            <button type="submit" className="btn bg-blue-200 text-blue-500 text-xl w-full">Registration</button>
                         </div>
                         <p>Already Have An Account ? <Link to="/login" className="text-orangebg-orange-600 text-xl font-bold">Login </Link> </p>
 

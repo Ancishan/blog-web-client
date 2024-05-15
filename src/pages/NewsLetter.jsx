@@ -29,22 +29,21 @@ const NewsLetter = () => {
                     <form onSubmit={handleSubmit} className="flex w-full flex-col items-center md:flex-row md:gap-x-3">
                         <Label
                             htmlFor="email"
-                            className="mb-2 mr-auto pl-28  shrink-0 text-2xl font-medium text-gray-500 dark:text-gray-400 md:m-0 md:mb-0"
+                            className="mb-2 mr-auto pl-28  shrink-0 text-3xl font-bold text-gray-500 dark:text-gray-400 md:m-0 md:mb-0"
                         >
                             Sign up for our newsletter
                         </Label>
                         <TextInput 
+                            className="text-blue-300 p-2"
                             id="email" 
                             placeholder="Enter your email" 
                             value={email} 
                             onChange={(e) => setEmail(e.target.value)} 
                         />
-                        <Button type="submit">Subscribe</Button>
+                        <Button className="text-xl px-12" type="submit">Subscribe</Button>
                     </form>
                 </div>
-                <Banner.CollapseButton color="gray" className="border-0 bg-transparent text-gray-500 dark:text-gray-400">
-                    <HiX className="h-4 w-4" />
-                </Banner.CollapseButton>
+               
             </div>
         </Banner>
     );

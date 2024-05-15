@@ -48,12 +48,12 @@ const BlogCard = ({ blog }) => {
           <p>{new Date(date).toLocaleDateString()}</p>
         </div>
         <p>{short_description}</p>
-        <div className="card-actions ">
-          <Link to={`/view/${_id}`} className="btn btn-outline btn-warning">
+        <div className="card-actions flex justify-between text-2xl font-bold text-blue-500 ">
+          <Link to={`/view/${_id}`} className="">
             View Details
           </Link>
           {user && (
-            <button type="button" onClick={wishList} className="btn btn-outline btn-warning">Wishlist</button>
+            <button type="button" onClick={wishList} className="">Wishlist</button>
           )}
         </div>
       </div>

@@ -27,10 +27,10 @@ const Featured = () => {
 
     return (
         <div className='container pl-16 pt-32 mx-auto min-h-[calc(100vh-306px)]'>
-            <h2 className="text-3xl font-bold pt-10 pb-16 text-center">Top 10 Blogs</h2>
+            <h2 className="text-3xl font-bold pt-10 pb-16 text-center text-blue-600">Top 10 Blogs</h2>
             <table className="table-auto w-full">
                 <thead>
-                    <tr>
+                    <tr className='text-blue-500 font-semibold text-lg'>
                         <th className="px-4 py-2">Title</th>
                         <th className="px-4 py-2">Description</th>
                         <th className="px-4 py-2">Author Name</th>
@@ -40,7 +40,7 @@ const Featured = () => {
                 <tbody>
                     {blogs.map(blog => (
                         <tr key={blog._id}>
-                            <td className="border px-4 py-2">{blog.blog_title}</td>
+                            <td className="border px-4 py-2 text-lg font-semibold">{blog.blog_title}</td>
                             <td className="border px-4 py-2">{blog.description}</td>
                             <td className="border px-4 py-2">{blog.bloger && blog.bloger.name}</td>
                             <td className="border px-4 py-2">

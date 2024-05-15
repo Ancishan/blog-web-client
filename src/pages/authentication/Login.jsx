@@ -67,7 +67,7 @@ const Login = () => {
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-400">Email</span>
+                <span className="label-text text-blue-400">Email</span>
               </label>
               <input type="email" placeholder="email" name="email" className="input input-bordered" required />
             </div>
@@ -79,32 +79,32 @@ const Login = () => {
                   name="password"
                   className="input input-bordered w-full"
                   required />
-                <span className="absolute top-3 right-1 pr-1 text-gray-400" onClick={() => setShowPass(!showPass)}>
+                <span className="absolute top-3 right-1 pr-1 text-blue-400" onClick={() => setShowPass(!showPass)}>
                   {
                     showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                   }
                 </span>
               </div>
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover text-gray-400">Forgot password?</a>
+                <a href="#" className="label-text-alt link link-hover text-red-400">Forgot password?</a>
               </label>
             </div>
             <div className="form-control mt-1">
-              <button className="btn bg-orange-200 full-width text-gray-400 text-xl">Login</button>
+              <button className="btn bg-orange-200 full-width font-bold text-blue-500 text-xl">Login</button>
             </div>
-            <p className="text-gray-400">Dont’t Have An Account ? <Link to="/registration" className="text-gray-400 font-bold">Registration </Link> </p>
+            <p className="text-blue-400">Dont’t Have An Account ? <Link to="/registration" className="text-blue-500 font-bold">Registration </Link> </p>
           </form>
           <div className="text-center">
-            <p className="text-gray-400 mx-auto text-lg">------ Or sign in with ------</p>
+            <p className="text-blue-500 mx-auto text-lg">------ Or sign in with ------</p>
             <div className="flex justify-center mt-2">
               <div className="flex ml-5 items-center">
                 <p className="text-lg inline-flex gap-2 items-center">
-                  <Link onClick={handleGoogleSignIn} className="text-gray-400 text-3xl items-center">
+                  <Link onClick={handleGoogleSignIn} className="text-blue-500 text-3xl items-center">
                     <FaGooglePlusG />
                   </Link>
                 </p>
                 <p className="inline-flex text-lg items-center pl-3">
-                  & <Link onClick={handleGithubsignIn} className="text-gray-400 text-xl items-center pl-3">
+                  & <Link onClick={handleGithubsignIn} className="text-blue-500 text-xl items-center pl-3">
                     <FiGithub />
                   </Link>
                 </p>
