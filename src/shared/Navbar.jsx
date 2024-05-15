@@ -68,7 +68,7 @@ const Navbar = () => {
             </ul>
           </div>
         ) : (
-          <img className='w-12 h-12 bg-gray-200 text-orange-600 rounded-full' src={users} alt='Default User Profile' />
+          <img className='w-12 h-12 bg-gray-200 mt-6 text-orange-600 rounded-full' src={users} alt='Default User Profile' />
         )}
       </div>
     </div>

@@ -2,7 +2,9 @@ import axios from "axios"
 import toast from "react-hot-toast"
 import { Link, useNavigate } from "react-router-dom"
 import useAuth from "../hooks/useAuth"
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const BlogCard = ({ blog }) => {
   const navigate = useNavigate()
   const { user } = useAuth()
@@ -35,10 +37,12 @@ const BlogCard = ({ blog }) => {
       console.error('Error creating wish:', error);
     }
   };
-  
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-xl " data-aos="flip-left"data-aos-duration="3000" data-aos-delay="0">
       <figure><img className="h-96 w-full object-cover" src={photo} alt="blog image" /></figure>
       <div className="card-body">
         <div className="flex gap-6 items-center">
