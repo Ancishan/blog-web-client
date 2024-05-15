@@ -47,5 +47,4 @@ const PopularPost = () => {
     </div>
     );
 };
-
 export default PopularPost;
